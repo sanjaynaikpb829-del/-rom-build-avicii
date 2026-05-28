@@ -1,0 +1,14 @@
+name: Build ROM
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build LineageOS for avicii
+        uses: MrAdrian10/build_rom@main
+        with:
+          ROM_NAME: lineage
+          DEVICE_NAME: avicii
+          BRANCH_NAME: lineage-21.0
+          BUILD_TYPE: userdebug
